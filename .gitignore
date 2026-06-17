@@ -1,0 +1,19 @@
+# Bloqueo de archivos de Cisco Packet Tracer (Modelos y copias de seguridad)
+*.pkt
+*.pka
+*.pkt.bak
+*.pka.bak
+*.lock
+
+# Archivos temporales y registros del sistema o aplicaciones
+*.tmp
+*.log
+
+# Archivos basura automáticos de Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Configuración local de Visual Studio Code
+.vscode/
