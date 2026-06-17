@@ -2,7 +2,7 @@
 name: Sugerir Mejora o Recurso
 about: Proponer una explicación más clara o un concepto complementario.
 title: "[SUGERENCIA] "
-labels: ''
+labels: sugerencia
 assignees: N0EV
 
 ---

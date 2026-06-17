@@ -3,7 +3,7 @@ name: Reportar Errata o Error
 about: Notificar un fallo conceptual, comando erróneo o falta de ortografía en los
   apuntes.
 title: "[ERRATA]"
-labels: ''
+labels: errata, formato
 assignees: N0EV
 
 ---
