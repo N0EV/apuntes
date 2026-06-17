@@ -15,7 +15,16 @@ Apuntes echos por mi de distintos temas, como por ejemplo hacking, sql, etc ...
 
 ## Estructura
 ```txt
-
+apuntes/
+├── .github/
+│   └── ISSUE_TEMPLATE/
+├── cisco/
+├── .gitignore
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── README.md
+└── SECURITY.md
 ```
 
 
