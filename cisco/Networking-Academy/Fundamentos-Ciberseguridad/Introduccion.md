@@ -1,9 +1,34 @@
 # Introducción
 Introducción al curso de fundamentos de ciberseguridad.
 
-INDICE
+<details>
+<summary><b>📋 Índice de contenidos (Haz clic para desplegar)</b></summary>
+
+1. [Amenazas](#1-amenazas)
+   1.1. [Tipos](#11-tipos)
+   1.2. [internas vs externas](#12-origen-de-las-amenazas-internas-vs-externas)
+   1.3. [Dominio ususario](#13-el-dominio-de-usuario-y-sus-riesgos)
+   1.4. [A los dominios](#14-a-los-dispositivos)
+   1.5. [Redes LAN](#15-entorno-de-red-local-lan-y-sus-riesgos)
+   1.6. [Nube privada](#16-amenazas-en-infraestructuras-de-nube-privada)
+   1.7. [Nube pública](#17-amenazas-e-infraestructura-de-nube-pública)
+   1.8. [Seguridad física](#18-amenazas-a-la-seguridad-física-y-de-las-instalaciones)
+   1.9. [Dominio de aplicación](#19-amenazas-al-dominio-de-applications)
+   1.10. [Ciberamenazas](#110-complejidad-y-evolución-de-las-ciberamenazas)
+   1.11. [Malware avanzado](#111-malware-avanzado-puertas-traseras-backdoors-y-rootkits)
+   1.12. [Inteligancia contra amenazas](#112-inteligencia-contra-amenazas-y-fuentes-de-investigación)
+2. [Engaño](#2-engaño)
+
+</details>
+
+
+---
+
+
 
 ## 1. Amenazas
+
+
 En el panorama digital actual, las organizaciones se enfrentan a un número de ciberamenazas en constante crecimiento. Para diseñar e implementar una estrategia de defensa sólida, el primer paso fundamental es identificar las vulnerabilidades existentes dentro de los **dominios de amenazas** de la empresa.
 
 > [!TIP]
@@ -25,7 +50,10 @@ Los atacantes buscan constantemente brechas en estos dominios. Las intrusiones y
 
 * **Ingeniería social en redes:** Uso de cuentas de redes sociales corporativas para engañar a los empleados.
 
+<br>
+
 ### 1.1 Tipos
+
 Agrupar las amenazas en categorías permite a las empresas evaluar qué tan probable es sufrir un ataque y calcular el impacto económico que causaría. De esta forma, se pueden priorizar los esfuerzos y el presupuesto en las áreas más críticas.
 
 Los peligros a los que se enfrenta una organización se clasifican en las siguientes categorías:
@@ -70,6 +98,8 @@ Los peligros a los que se enfrenta una organización se clasifican en las siguie
 
 * **Desastres Naturales:** Eventos climáticos o geológicos impredecibles que destruyen las instalaciones (como terremotos, tormentas o incendios).
 
+<br>
+
 ### 1.2 Origen de las Amenazas: Internas vs. Externas
 
 Las amenazas a la seguridad informática también se pueden clasificar según el entorno en el que se originan. Esta distinción ayuda a entender el perímetro de defensa que se debe reforzar:
@@ -86,8 +116,9 @@ Las amenazas a la seguridad informática también se pueden clasificar según el
 
     * **Ingeniería social:** Técnicas de engaño y manipulación (como el Phishing) dirigidas a los empleados para conseguir que revelen credenciales o abran las puertas del sistema.
 
-#### Diagrama de Origen de Amenazas
+<br>
 
+#### Diagrama de Origen de Amenazas
 ```mermaid
 graph TD
     A[Clasificación por Origen] --> B(Amenazas Internas)
@@ -126,7 +157,10 @@ graph TD
     style C2a fill:#F0FDF4,stroke:#86EFAC,stroke-width:1px,color:#000
 ```
 
+<br>
+
 ### 1.3 El Dominio de Usuario y sus Riesgos
+
 El **Dominio de Usuario** abarca a cualquier persona que tenga autorización para interactuar con los sistemas de información de una organización. Esto incluye a los empleados directos, personal contratado, clientes y socios comerciales (partners).
 
 En el ámbito de la ciberseguridad, los usuarios son considerados universalmente como **el eslabón más débil de la cadena de defensa**. Al estar expuestos a engaños o cometer errores involuntarios, representan una de las mayores amenazas para mantener a salvo la **Tríada CIA**:
@@ -153,6 +187,8 @@ Para entender cómo se vulnera este dominio en el día a día, a continuación s
 
 * **Destrucción de activos digitales:** Acciones (ya sean por sabotaje o por errores graves) que provocan la eliminación de sistemas, aplicaciones o datos críticos de la compañía.
 
+<br>
+
 ### 1.4 A los dispositivos
 
 #### Riesgos Operativos y de Usuario
@@ -168,6 +204,8 @@ Para entender cómo se vulnera este dominio en el día a día, a continuación s
 #### Vulnerabilidad Tecnológica
 * **Sistemas obsoletos:** Operar con hardware o software sin soporte técnico multiplica el éxito de los ciberataques.
 
+<br>
+
 ### 1.5 Entorno de Red Local (LAN) y sus Riesgos
 
 > [!NOTE]
@@ -180,6 +218,8 @@ La red local actúa como el puente principal entre los usuarios y los recursos c
 * **Segmentación de tráfico:** División de la red local para aislar datos sensibles y reducir la superficie de exposición ante intrusos.
 * **Monitoreo local:** Inspección continua del flujo de datos interno para detectar anomalías, interceptación de tráfico (Sniffing) o propagación de malware.
 
+<br>
+
 ### 1.6 Amenazas en Infraestructuras de Nube Privada
 
 > [!NOTE]
@@ -189,11 +229,14 @@ La red local actúa como el puente principal entre los usuarios y los recursos c
 > Aunque suele considerarse un entorno más controlado que la nube pública, la nube privada sigue expuesta a vectores de ataque críticos que comprometen su seguridad.
 
 #### Riesgos y Amenazas Principales:
+
 * **Reconocimiento no autorizado:** Escaneo de puertos activos y sondeo de topología de red por parte de atacantes para buscar vías de entrada.
 * **Brechas de autenticación:** Accesos ilegítimos a los recursos y datos alojados por fallos en el control de identidad.
 * **Debilidades en el software base:** Presencia de vulnerabilidades sin corregir en los sistemas operativos de firewalls, routers y dispositivos de red.
 * **Fallos de administración:** Errores humanos en la configuración de políticas de seguridad y reglas de enrutamiento.
 * **Exfiltración por acceso remoto:** Conexiones externas de usuarios que descargan información confidencial a dispositivos desprotegidos.
+
+<br>
 
 ### 1.7 Amenazas e Infraestructura de Nube Pública
 
@@ -212,9 +255,12 @@ A diferencia de la nube privada, opera bajo un **modelo de responsabilidad compa
     * *Riesgo crítico:* Secuestro de cuentas (Account Hijacking) por credenciales débiles y fugas de datos mediante ataques de Phishing dirigidos.
 
 #### Amenazas Globales de la Nube Pública:
+
 * **Filtración de datos (Data Breaches):** Volúmenes de almacenamiento en la nube expuestos públicamente por permisos mal configurados.
 * **Gestión de identidades deficiente:** Ausencia de autenticación multifactor (MFA) en paneles de administración avanzados.
 * **Ataques DoS/DDoS en la nube:** Inundación de tráfico contra las APIs públicas que puede saturar los recursos de la organización y generar costes económicos imprevistos.
+
+<br>
 
 ### 1.8 Amenazas a la Seguridad Física y de las Instalaciones
 
@@ -222,11 +268,14 @@ A diferencia de la nube privada, opera bajo un **modelo de responsabilidad compa
 > La seguridad física de la infraestructura de TI suele pasarse por alto en los planes de ciberseguridad. Sin embargo, si un atacante logra acceso físico directo a los equipos, cualquier control de seguridad lógico o digital queda completamente anulado.
 
 #### Vectores de Riesgo e Intrusión Física:
+
 * **Ingreso por acompañamiento (Tailgating / Piggybacking):** Aprovechar la apertura de puertas de seguridad por personal autorizado para acceder a áreas restringidas sin identificarse.
 * **Manipulación de cableado estructurado:** Acceso no autorizado a los armarios de telecomunicaciones (MDF/IDF) para interceptar físicamente el tráfico de datos de la red (Network Tapping).
 * **Robo de terminales activos:** Sustracción de dispositivos portátiles, estaciones de trabajo o servidores NAS de oficinas que se han quedado desatendidas o sin controles biométricos.
 * **Sabotaje del suministro de soporte:** Manipulación externa de las acometidas eléctricas, sistemas de aire acondicionado (HVAC) o sistemas de extinción de incendios para provocar caídas masivas en el centro de datos.
 * **Exfiltración de residuos documentales (Dumpster Diving):** Recuperación física de información sensible (como contraseñas apuntadas, diagramas de topología o informes de red) arrojada a la basura sin destruir previamente.
+
+<br>
 
 ### 1.9 Amenazas al Dominio de Aplicaciones
 
@@ -246,6 +295,8 @@ A diferencia de la nube privada, opera bajo un **modelo de responsabilidad compa
 * **Invasión Física de la Infraestructura de Cómputo:**
     * *Impacto:* Accesos no autorizados directos a los centros de datos (CPD), salas de servidores y armarios de cableado que permiten la desconexión o manipulación del hardware que aloja las aplicaciones.
 
+<br>
+
 ### 1.10 Complejidad y Evolución de las Ciberamenazas
 
 > [!NOTE]
@@ -254,18 +305,23 @@ A diferencia de la nube privada, opera bajo un **modelo de responsabilidad compa
 Esta sofisticación ha dado lugar a amenazas de alta complejidad que rompen los esquemas de la seguridad tradicional:
 
 #### 1. Amenaza Persistente Avanzada (APT - Advanced Persistent Threat)
+
 * **Definición:** Ataque cibernético continuo y dirigido que utiliza tácticas de espionaje sumamente elaboradas, involucrando a múltiples actores coordinados y malware sofisticado.
 * **Objetivo operativo:** Obtener acceso persistente a la red de un objetivo específico y analizar su infraestructura de forma continua.
 * **Persistencia:** Los atacantes operan bajo el radar y permanecen sin ser detectados durante largos períodos de tiempo, generando consecuencias potencialmente devastadoras.
 * **Perfil de objetivo:** Dirigido generalmente a gobiernos y organizaciones de alto nivel, debido a que las APT requieren estar muy bien organizadas y contar con un alto financiamiento económico.
 
 #### 2. Ataques de Algoritmo (Algorithmic Attacks)
+
 * **Definición:** Acciones malintencionadas que aprovechan los algoritmos lógicos de un software legítimo para generar comportamientos no deseados o perjudiciales en el sistema.
 * **Vectores de explotación:**
     * *Perfilado y alertas falsas:* Manipulación de algoritmos de supervisión (como los que rastrean e informan el consumo de energía de una computadora) para seleccionar objetivos específicos o activar alertas falsas en los sistemas de monitoreo.
     * *Saturación de recursos:* Forzar a un ordenador a utilizar la memoria de forma masiva o a sobretrabajar su Unidad Central de Procesamiento (CPU), provocando la desactivación del equipo por sobrecarga de hardware.
 
+<br>
+
 #### 3. Flujo Logístico de un Ataque Complejo
+
 Para que una amenaza sofisticada (como una APT) cumpla sus objetivos utilizando estos vectores, los atacantes ejecutan de forma metódica el siguiente ciclo de vida dentro de la infraestructura de red:
 
 * **Acceso Inicial:** Entrada a la organización explotando vulnerabilidades perimetrales menores o aplicando ingeniería social sobre el Dominio de Usuario.
@@ -274,22 +330,28 @@ Para que una amenaza sofisticada (como una APT) cumpla sus objetivos utilizando 
 * **Establecimiento de Persistencia (C2):** Instalación de puertas traseras (*Backdoors*) y configuración de canales de Comando y Control cifrados (túneles HTTPS o DNS) para mantener el acceso y recibir órdenes externas de forma encubierta.
 * **Ejecución del Objetivo Final:** Exfiltración fragmentada de datos confidenciales hacia servidores externos o despliegue masivo de Ransomware para cifrar los sistemas y forzar el pago de un rescate.
 
+<br>
+
 ### 1.11 Malware Avanzado: Puertas Traseras (Backdoors) y Rootkits
 
 > [!WARNING]
 > Los ciberdelincuentes utilizan software malicioso especializado no solo para infectar un sistema, sino para romper los mecanismos de autenticación estándar, evadir las herramientas de auditoría forense y garantizar su acceso permanente a la infraestructura.
 
 #### 1. Puertas Traseras (Backdoors) y Herramientas de Administración Remota (RAT)
+
 * **Definición:** Programas diseñados para otorgar acceso no autorizado a un sistema informático saltándose los procedimientos de autenticación ordinarios del sistema operativo o del firewall.
 * **Mecanismo de Infección:** Los atacantes suelen engañar a usuarios legítimos para que ejecuten, de forma involuntaria, un Troyano de Acceso Remoto o RAT (*Remote Access Tool / Remote Administrative Tool*).
 * **Ejemplos Históricos Clave:** Herramientas de explotación como *NetBus* y *Back Orifice*.
 * **Propósito Operativo:** El objetivo principal de una puerta trasera es garantizar el acceso futuro de los ciberdelincuentes a la red interna. Esto les permite reingresar al sistema de forma persistente, incluso si los administradores de TI descubren y parchean la vulnerabilidad original que se utilizó para el vector de ataque inicial.
 
 #### 2. Rootkits
+
 * **Definición:** Malware de alta complejidad diseñado específicamente para modificar las estructuras internas del sistema operativo (núcleo o *kernel* y archivos binarios esenciales) con el fin de ocultar su presencia y la de otras amenazas.
 * **Escalada de Privilegios:** La mayoría de los rootkits se aprovechan de vulnerabilidades de desbordamiento de búfer o fallos del software base para elevar sus permisos de ejecución, obteniendo un nivel de control total sobre recursos restringidos del sistema.
 * **Evasión de Detección:** Tienen la capacidad de alterar las herramientas nativas de monitoreo, los gestores de procesos y el software de análisis forense. Al falsificar las llamadas al sistema (*System Calls*), ocultan sus propios archivos y conexiones de red, haciéndose invisibles para los antivirus tradicionales.
 * **Mitigación y Respuesta:** Debido a la profunda alteración que realizan sobre los archivos e instrucciones del sistema operativo, las herramientas de desinfección estándar suelen ser ineficaces. En la gran mayoría de los casos de infección confirmada, el procedimiento seguro exige formatear por completo el almacenamiento físico (borrado completo) y reinstalar el sistema operativo y el software desde cero utilizando fuentes limpias.
+
+<br>
 
 ### 1.12 Inteligencia contra Amenazas y Fuentes de Investigación
 
@@ -299,6 +361,7 @@ Para que una amenaza sofisticada (como una APT) cumpla sus objetivos utilizando 
 Dentro del ecosistema global de ciberseguridad, existen fuentes estandarizadas de investigación, bases de datos y canales de intercambio esenciales para el análisis preventivo:
 
 #### 1. Diccionario de Vulnerabilidades y Exposiciones Comunes (CVE - Common Vulnerabilities and Exposures)
+
 * **Definición:** Catálogo estandarizado de registros de seguridad que identifica, define y documenta vulnerabilidades de software y hardware de conocimiento público.
 * **Entidades Promotoras:** Está copatrocinado por el Equipo de Respuesta ante Emergencias Informáticas de los Estados Unidos (US-CERT) y el Departamento de Seguridad Nacional de EE. UU. (DHS).
 * **Gestión y Mantenimiento:** La organización *The MITRE Corporation* se encarga de centralizar la base de datos y su sitio web público.
@@ -308,11 +371,13 @@ Dentro del ecosistema global de ciberseguridad, existen fuentes estandarizadas d
     * **Referencias Cruzadas:** Enlaces a boletines de seguridad de los fabricantes, exploits públicos y parches de mitigación.
 
 #### 2. Monitorización de la Red Oscura (Dark Web)
+
 * **Definición:** Espacio de Internet compuesto por contenido web cifrado que no está indexado por los motores de búsqueda convencionales, lo que requiere software específico (como Tor), autorizaciones o configuraciones dedicadas para acceder.
 * **Aplicación en Ciberseguridad:** Los investigadores expertos en amenazas rastrean e inspeccionan de forma constante estos entornos y foros clandestinos.
 * **Objetivo Operativo:** Detectar de forma proactiva la venta de credenciales corporativas filtradas, código de exploits de día cero (*Zero-Day*) y la planificación de campañas de ataques dirigidos.
 
 #### 3. Indicadores de Compromiso o Riesgo (IoC - Indicators of Compromise)
+
 * **Definición:** Datos técnicos forenses que sirven como evidencia observable de que un sistema o una red ha sufrido una violación de seguridad o una intrusión activa.
 * **Componentes y Elementos:** Proporcionan detalles precisos del ataque a través de:
     * **Firmas de Malware:** Valores Hash (MD5, SHA-256) de archivos ejecutables maliciosos detectados.
@@ -320,9 +385,12 @@ Dentro del ecosistema global de ciberseguridad, existen fuentes estandarizadas d
     * **Alteraciones del Sistema:** Rutas de registro modificadas en el sistema operativo o archivos de configuración locales sospechosos.
 
 #### 4. Uso Compartido de Indicadores Automatizados (AIS - Automated Indicator Sharing)
+
 * **Definición:** Capacidad técnica desarrollada por la Agencia de Seguridad de Infraestructura y Ciberseguridad (CISA) de los Estados Unidos que permite el intercambio masivo y en tiempo real de indicadores de ciberamenazas entre el gobierno y el sector privado.
 * **Estándares y Protocolos Técnicos:** Para automatizar este intercambio de datos sin intervención humana, AIS se apoya en dos tecnologías clave:
     * **STIX (Structured Threat Information Expression):** Un lenguaje estandarizado, estructurado y basado en XML/JSON para modelar, caracterizar y describir la información técnica de las amenazas informáticas de manera uniforme.
     * **TAXII (Trusted Automated Exchange of Intelligence Information):** El protocolo de capa de aplicación que define los servicios y mensajes necesarios para transportar de forma segura la inteligencia de amenazas (los archivos STIX) a través de redes IP.
+
+<br>
 
 ## 2. Engaño
