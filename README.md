@@ -27,14 +27,14 @@ apuntes/
 └── SECURITY.md
 ```
 
+---
 
-## Declaración de Autoría y Propiedad Intelectual
+## ⚖️ Exención de Responsabilidad y Cumplimiento de Derechos de Autor
 
-Todo el material contenido en este repositorio (notas, explicaciones, diagramas y código) ha sido **desarrollado de forma 100% independiente** por mí.
+Este repositorio ha sido desarrollado con fines estrictamente académicos y de documentación personal. Todo el contenido textual, notas explicativas, esquemas de código y diagramas han sido redactados e implementados de forma original por el autor, bajo los principios de uso legítimo y creación de contenido propio.
 
-Este espacio funciona exclusivamente como un diario de aprendizaje personal. Aunque algunos conceptos o rutas de estudio se basan en formaciones externas, **todo el contenido ha sido transformado, reinterpretado y redactado desde cero con mis propias palabras y lógica**.
+Para garantizar el cumplimiento normativo y respetar la propiedad intelectual de terceros, se aplican las siguientes directrices básicas:
 
-**Garantías de cumplimiento normativo:**
-* **Sin material de terceros:** No se distribuyen contenidos originales, textos literales, capturas de pantalla, vídeos ni PDFs propiedad de ninguna organización o plataforma.
-* **Propósito educativo:** El único fin de este repositorio es el desarrollo profesional autónomo y la demostración de habilidades técnicas personales.
-* **Código propio:** Todos los ejercicios y proyectos han sido programados de forma propia, evitando la publicación de soluciones directas a exámenes o talleres privados evaluables.
+*   **Sin Material Propietario:** El repositorio no almacena, distribuye ni reproduce archivos, diapositivas, bancos de preguntas, capturas de pantalla ni documentación oficial protegida por los derechos de autor de ninguna plataforma educativa, empresa certificadora o institución académica.
+*   **Cumplimiento de Términos de Servicio:** Toda la información técnica, laboratorios prácticos y guías metodológicas aquí alojadas se han elaborado respetando estrictamente los Términos de Servicio (ToS) y las normativas de confidencialidad de las plataformas y centros correspondientes.
+*   **Enfoque en Estándares Abiertos:** El contenido se centra exclusivamente en el análisis de estándares públicos de la industria, protocolos abiertos, arquitecturas genéricas de sistemas y sintaxis pública de lenguajes de programación.
