@@ -50,7 +50,7 @@ Los atacantes buscan constantemente brechas en estos dominios. Las intrusiones y
 
 * **Ingeniería social en redes:** Uso de cuentas de redes sociales corporativas para engañar a los empleados.
 
-<br>
+---
 
 ### 1.1 Tipos
 
@@ -98,7 +98,7 @@ Los peligros a los que se enfrenta una organización se clasifican en las siguie
 
 * **Desastres Naturales:** Eventos climáticos o geológicos impredecibles que destruyen las instalaciones (como terremotos, tormentas o incendios).
 
-<br>
+---
 
 ### 1.2 Origen de las Amenazas: Internas vs. Externas
 
@@ -116,7 +116,7 @@ Las amenazas a la seguridad informática también se pueden clasificar según el
 
     * **Ingeniería social:** Técnicas de engaño y manipulación (como el Phishing) dirigidas a los empleados para conseguir que revelen credenciales o abran las puertas del sistema.
 
-<br>
+---
 
 #### Diagrama de Origen de Amenazas
 ```mermaid
@@ -157,7 +157,7 @@ graph TD
     style C2a fill:#F0FDF4,stroke:#86EFAC,stroke-width:1px,color:#000
 ```
 
-<br>
+---
 
 ### 1.3 El Dominio de Usuario y sus Riesgos
 
@@ -187,7 +187,7 @@ Para entender cómo se vulnera este dominio en el día a día, a continuación s
 
 * **Destrucción de activos digitales:** Acciones (ya sean por sabotaje o por errores graves) que provocan la eliminación de sistemas, aplicaciones o datos críticos de la compañía.
 
-<br>
+---
 
 ### 1.4 A los dispositivos
 
@@ -204,7 +204,7 @@ Para entender cómo se vulnera este dominio en el día a día, a continuación s
 #### Vulnerabilidad Tecnológica
 * **Sistemas obsoletos:** Operar con hardware o software sin soporte técnico multiplica el éxito de los ciberataques.
 
-<br>
+---
 
 ### 1.5 Entorno de Red Local (LAN) y sus Riesgos
 
@@ -218,7 +218,7 @@ La red local actúa como el puente principal entre los usuarios y los recursos c
 * **Segmentación de tráfico:** División de la red local para aislar datos sensibles y reducir la superficie de exposición ante intrusos.
 * **Monitoreo local:** Inspección continua del flujo de datos interno para detectar anomalías, interceptación de tráfico (Sniffing) o propagación de malware.
 
-<br>
+---
 
 ### 1.6 Amenazas en Infraestructuras de Nube Privada
 
@@ -236,7 +236,7 @@ La red local actúa como el puente principal entre los usuarios y los recursos c
 * **Fallos de administración:** Errores humanos en la configuración de políticas de seguridad y reglas de enrutamiento.
 * **Exfiltración por acceso remoto:** Conexiones externas de usuarios que descargan información confidencial a dispositivos desprotegidos.
 
-<br>
+---
 
 ### 1.7 Amenazas e Infraestructura de Nube Pública
 
@@ -260,7 +260,7 @@ A diferencia de la nube privada, opera bajo un **modelo de responsabilidad compa
 * **Gestión de identidades deficiente:** Ausencia de autenticación multifactor (MFA) en paneles de administración avanzados.
 * **Ataques DoS/DDoS en la nube:** Inundación de tráfico contra las APIs públicas que puede saturar los recursos de la organización y generar costes económicos imprevistos.
 
-<br>
+---
 
 ### 1.8 Amenazas a la Seguridad Física y de las Instalaciones
 
@@ -275,7 +275,7 @@ A diferencia de la nube privada, opera bajo un **modelo de responsabilidad compa
 * **Sabotaje del suministro de soporte:** Manipulación externa de las acometidas eléctricas, sistemas de aire acondicionado (HVAC) o sistemas de extinción de incendios para provocar caídas masivas en el centro de datos.
 * **Exfiltración de residuos documentales (Dumpster Diving):** Recuperación física de información sensible (como contraseñas apuntadas, diagramas de topología o informes de red) arrojada a la basura sin destruir previamente.
 
-<br>
+---
 
 ### 1.9 Amenazas al Dominio de Aplicaciones
 
@@ -295,7 +295,7 @@ A diferencia de la nube privada, opera bajo un **modelo de responsabilidad compa
 * **Invasión Física de la Infraestructura de Cómputo:**
     * *Impacto:* Accesos no autorizados directos a los centros de datos (CPD), salas de servidores y armarios de cableado que permiten la desconexión o manipulación del hardware que aloja las aplicaciones.
 
-<br>
+---
 
 ### 1.10 Complejidad y Evolución de las Ciberamenazas
 
@@ -318,7 +318,7 @@ Esta sofisticación ha dado lugar a amenazas de alta complejidad que rompen los 
     * *Perfilado y alertas falsas:* Manipulación de algoritmos de supervisión (como los que rastrean e informan el consumo de energía de una computadora) para seleccionar objetivos específicos o activar alertas falsas en los sistemas de monitoreo.
     * *Saturación de recursos:* Forzar a un ordenador a utilizar la memoria de forma masiva o a sobretrabajar su Unidad Central de Procesamiento (CPU), provocando la desactivación del equipo por sobrecarga de hardware.
 
-<br>
+---
 
 #### 3. Flujo Logístico de un Ataque Complejo
 
@@ -330,7 +330,7 @@ Para que una amenaza sofisticada (como una APT) cumpla sus objetivos utilizando 
 * **Establecimiento de Persistencia (C2):** Instalación de puertas traseras (*Backdoors*) y configuración de canales de Comando y Control cifrados (túneles HTTPS o DNS) para mantener el acceso y recibir órdenes externas de forma encubierta.
 * **Ejecución del Objetivo Final:** Exfiltración fragmentada de datos confidenciales hacia servidores externos o despliegue masivo de Ransomware para cifrar los sistemas y forzar el pago de un rescate.
 
-<br>
+---
 
 ### 1.11 Malware Avanzado: Puertas Traseras (Backdoors) y Rootkits
 
@@ -351,7 +351,7 @@ Para que una amenaza sofisticada (como una APT) cumpla sus objetivos utilizando 
 * **Evasión de Detección:** Tienen la capacidad de alterar las herramientas nativas de monitoreo, los gestores de procesos y el software de análisis forense. Al falsificar las llamadas al sistema (*System Calls*), ocultan sus propios archivos y conexiones de red, haciéndose invisibles para los antivirus tradicionales.
 * **Mitigación y Respuesta:** Debido a la profunda alteración que realizan sobre los archivos e instrucciones del sistema operativo, las herramientas de desinfección estándar suelen ser ineficaces. En la gran mayoría de los casos de infección confirmada, el procedimiento seguro exige formatear por completo el almacenamiento físico (borrado completo) y reinstalar el sistema operativo y el software desde cero utilizando fuentes limpias.
 
-<br>
+---
 
 ### 1.12 Inteligencia contra Amenazas y Fuentes de Investigación
 
@@ -391,6 +391,124 @@ Dentro del ecosistema global de ciberseguridad, existen fuentes estandarizadas d
     * **STIX (Structured Threat Information Expression):** Un lenguaje estandarizado, estructurado y basado en XML/JSON para modelar, caracterizar y describir la información técnica de las amenazas informáticas de manera uniforme.
     * **TAXII (Trusted Automated Exchange of Intelligence Information):** El protocolo de capa de aplicación que define los servicios y mensajes necesarios para transportar de forma segura la inteligencia de amenazas (los archivos STIX) a través de redes IP.
 
-<br>
+---
 
 ## 2. Engaño
+
+## 2.1 Ingeniería social
+
+La ingeniería social es un método de ataque que busca manipular a las personas para que realicen acciones involuntarias o divulguen información confidencial. A diferencia de los ciberataques convencionales, este enfoque no explota vulnerabilidades en el software o el hardware, sino las debilidades de la psicología humana.
+
+### Mecanismos de Manipulación
+
+Los atacantes diseñan sus vectores de ataque aprovechando rasgos intrínsecos del comportamiento humano:
+
+* **Disposición a ayudar:** Explotación de la empatía o la cortesía del usuario.
+* **Avaricia o vanidad:** Promesas de beneficios económicos o reconocimiento.
+* **Urgencia o miedo:** Creación de escenarios de falsas crisis que exigen una respuesta inmediata.
+
+---
+
+### Tipos Comunes de Ataques
+
+A continuación se analizan las variantes más extendidas de este tipo de amenazas:
+
+#### Fraude de Identidad (Identity Theft)
+
+Consiste en la obtención y el uso no autorizado de los datos personales de un individuo para suplantar su identidad. El objetivo suele ser adquirir bienes, servicios o beneficios financieros mediante el engaño.
+
+> [!NOTE]
+> **Escenario Típico:** Un atacante recopila información personal de la víctima (nombres, documentos de identidad, fechas de nacimiento). Posteriormente, utiliza estos registros para tramitar productos financieros o créditos bancarios a nombre del afectado.
+
+#### Quid pro quo
+
+Consiste en la solicitud de datos a cambio de un beneficio. Por ejemplo, esto se usa mucho en ataques de *phishing*, donde se piden datos personales a cambio de unas vacaciones gratuitas.
+
+> [!NOTE]
+> **Escenario Típico:** Un atacante envía un correo de phishing a un empleado indicando que si facilita sus credenciales obtendrá unas vacaciones gratis.
+
+#### Pretexto (Pretexting)
+
+Consiste en la creación de un escenario falso o una historia creíble (el pretexto) para engañar a una víctima. El atacante suele suplantar una identidad de autoridad o confianza para manipular a la persona y lograr que revele información confidencial o datos privilegiados.
+
+> [!NOTE]
+> **Escenario Típico:** Un atacante llama a un empleado haciéndose pasar por un técnico de soporte de TI. Afirma que hay un fallo en el sistema y le pide sus credenciales de acceso para "confirmar su identidad" y solucionar el problema.
+
+---
+
+### 2.1.1 Tácticas de ingeniería social
+
+Algunas de las tácticas de ingeniería social son:
+
+1. **Autoridad:** Aprovechan la autoridad de algún jefe o empleado con rango alto para solicitar información a sus subordinados, quienes obedecen por respeto o temor a represalias.
+2. **Urgencia:** Crean una falsa sensación de prisa o escasez de tiempo para que la víctima actúe rápido y tome decisiones impulsivas sin verificar la fuente.
+3. **Intimidación:** Utilizan amenazas o un tono agresivo (como consecuencias legales o despido) para asustar a la víctima y obligarla a colaborar.
+4. **Consenso o prueba social:** Engañan a la víctima haciéndole creer que sus compañeros o personas de confianza ya han realizado la acción solicitada.
+5. **Escasez:** Ofrecen un beneficio o advierten de la pérdida de un servicio por tiempo muy limitado, apelando al miedo a quedarse fuera (FOMO).
+6. **Familiaridad o simpatía:** El atacante busca agradar a la víctima, entablar una conversación amigable o encontrar intereses comunes para ganarse su confianza antes del fraude.
+7. **Confianza:** Se aprovechan de la buena voluntad inherente de las personas y de su deseo natural de ayudar a los demás ante un problema.
+
+---
+
+### 2.1.2 Métodos y Ataques de Engaño Digital
+
+Estos ataques representan los métodos y escenarios lógicos donde se aplican las tácticas de manipulación psicológica descritas anteriormente:
+
+*   **Simulación de Identidad (Impersonation):** El atacante suplanta a una figura de autoridad (como un inspector fiscal o soporte de TI) para coaccionar a la víctima mediante amenazas, o suplanta a la propia víctima en redes sociales para destruir su credibilidad.
+*   **Hoaxes (Bulos o Engaños Masivos):** Falsas alarmas diseñadas para provocar pánico colectivo. Un ejemplo típico son las alertas de virus inexistentes que exigen al usuario reenviar el mensaje a todos sus contactos, explotando la táctica de confianza y miedo.
+*   **Estafa de Facturas (Invoice Scam):** Envío de cobros fraudulentos que emplean lenguaje urgente o amenazante para obligar a un empleado a realizar pagos involuntarios o a introducir credenciales financieras en portales falsos.
+*   **Ataque de Abrevadero (Watering Hole):** El atacante identifica y compromete con malware los sitios web legítimos que los miembros de una organización visitan con frecuencia, esperando pacientemente a que las víctimas se infecten de forma pasiva.
+*   **Typosquatting (Secuestro de URL):** Registro de nombres de dominio maliciosos que imitan errores tipográficos comunes al escribir URLs populares (ej. *gogle.com*). Busca redirigir al usuario a sitios fraudulentos para capturar datos o inyectar código malicioso.
+*   **Bypass de Etiquetas de Correo (Remitente Externo):** Manipulación técnica de los encabezados de un correo para eliminar la advertencia de "Remitente Externo" implementada por la empresa, engañando al empleado para que crea que el mensaje se originó de forma interna y legítima.
+*   **Campañas de Influencia (Influence Campaigns):** Uso estratégico y coordinado de noticias falsas, desinformación y perfiles automatizados (bots) en redes sociales para alterar la opinión pública, generar desestabilización o dirigir el comportamiento de un colectivo.
+
+---
+
+### 2.1.3 Ataques Físicos de Ingeniería Social
+
+A diferencia de las amenazas digitales, estas técnicas se basan en la observación directa, la recolección de elementos materiales o el acceso no autorizado al entorno físico de la víctima.
+
+#### Shoulder Surfing (Mirar por encima del hombro)
+Consiste en observar físicamente a una persona mientras introduce información confidencial en un dispositivo. El atacante puede mirar de forma directa o utilizar herramientas de asistencia como binoculares, lentes telescópicas o cámaras de seguridad comprometidas.
+
+*   **Objetivo común:** Capturar contraseñas de desbloqueo, códigos PIN de tarjetas bancarias, credenciales de acceso o patrones de seguridad.
+> [!NOTE]
+> **Escenario Típico:** Un atacante hace fila detrás de un empleado en una cafetería y mira disimuladamente la pantalla de su teléfono mientras este escribe la contraseña de acceso a la red corporativa.
+
+#### Dumpster Diving (Búsqueda en la basura)
+Consiste en revisar los contenedores de basura, reciclaje o desechos de una organización o individuo con el fin de encontrar documentos impresos o soportes físicos que contengan datos valiosos.
+
+*   **Objetivo común:** Obtener manuales técnicos, listas de empleados, facturas con datos fiscales, organigramas o datos de clientes que sirvan para planificar un ataque posterior más complejo.
+> [!NOTE]
+> **Escenario Típico:** Un atacante registra el contenedor de reciclaje de papel de una empresa y encuentra un listado impreso desactualizado que contiene los correos electrónicos y extensiones telefónicas de todo el departamento de finanzas.
+
+#### Tailgating (Seguimiento cercano)
+Consiste en seguir muy de cerca a una persona autorizada que acaba de abrir una puerta blindada o un punto de acceso restringido, logrando colarse justo antes de que el mecanismo de seguridad cierre el paso por completo. En este caso, **la persona legítima no es consciente** de que está facilitando el acceso al intruso.
+
+*   **Objetivo común:** Superar barreras perimetrales físicas, torniquetes o controles biométricos sin levantar sospechas ni activar alarmas.
+>[!NOTE]
+>[Escenario Típico]
+>Un empleado pasa su tarjeta magnética para entrar al centro de datos y el atacante camina rápidamente detrás de él, aprovechando la inercia de la puerta para colarse antes de que el muelle hidráulico cierre el acceso.
+
+#### Piggybacking (Acceso consentido por cortesía)
+A diferencia del tailgating, en esta técnica **la persona autorizada sí sabe** que está dejando pasar al atacante a la zona restringida. El intruso logra este acceso manipulando las normas sociales de cortesía, educación o compañerismo para que el empleado colabore voluntariamente sin verificar sus credenciales.
+
+*   **Objetivo común:** Saltarse los protocolos de seguridad física y de identificación de una empresa aprovechándose de la empatía o el deseo natural de ayudar del ser humano.
+>[!NOTE]
+>[Escenario Típico]
+>El atacante se acerca a la entrada restringida cargando varias cajas pesadas y le dice a un empleado: "¡Hola! ¿Me sostienes la puerta, por favor? Voy muy cargado". El empleado, por pura educación, mantiene la puerta abierta y le permite el paso sin pedirle su acreditación.
+
+---
+
+### 2.1.4 Estrategias de Mitigación y Cultura de Seguridad Colectiva
+
+Las organizaciones deben fortalecer su factor humano mediante la concienciación continua sobre las tácticas de manipulación psicológica. Para prevenir incidentes de ingeniería social, se deben implementar y promover las siguientes pautas operativas entre todos los miembros del equipo:
+
+*   **Principio de Privilegio Mínimo e Identificación:** Prohibir de forma estricta la entrega de credenciales de acceso, contraseñas o datos corporativos confidenciales a través de canales no verificados (como llamadas telefónicas entrantes, chats o correos electrónicos), sin importar la supuesta urgencia del solicitante.
+*   **Gestión de Enlaces y Conectividad:** Evitar interactuar con hipervínculos, botones o archivos adjuntos que lleguen en comunicaciones electrónicas sospechosas, llamativas o que apelen a la curiosidad del usuario.
+*   **Control de Descargas:** Supervisar y bloquear cualquier tipo de descarga de software o archivos automatizados que no hayan sido iniciados de forma consciente por el propio usuario en sitios web oficiales.
+*   **Políticas de Seguridad Institucionales:** Definir marcos normativos internos claros y capacitar periódicamente al personal para que conozca los canales oficiales de reporte ante un posible fraude.
+*   **Responsabilidad Compartida:** Fomentar una cultura corporativa donde cada empleado entienda que la seguridad de la información es un compromiso colectivo y que reportar anomalías a tiempo protege a toda la organización.
+
+> [!IMPORTANT]
+> **Gestión de la Presión Psicológica:** Los ataques exitosos suelen explotar la prisa o la intimidación. Ante cualquier solicitud inusual que genere urgencia o coacción por parte de un tercero, el empleado debe detener la comunicación de inmediato y verificar la identidad del emisor a través de un canal secundario oficial.
