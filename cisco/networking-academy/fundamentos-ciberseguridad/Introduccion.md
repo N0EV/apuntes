@@ -5,21 +5,29 @@ Introducción al curso de fundamentos de ciberseguridad.
 <summary><b>📋 Índice de contenidos (Haz clic para desplegar)</b></summary>
 
 1. [Amenazas](#1-amenazas)
-   1.1. [Tipos](#11-tipos)
-   1.2. [internas vs externas](#12-origen-de-las-amenazas-internas-vs-externas)
-   1.3. [Dominio ususario](#13-el-dominio-de-usuario-y-sus-riesgos)
-   1.4. [A los dominios](#14-a-los-dispositivos)
-   1.5. [Redes LAN](#15-entorno-de-red-local-lan-y-sus-riesgos)
-   1.6. [Nube privada](#16-amenazas-en-infraestructuras-de-nube-privada)
-   1.7. [Nube pública](#17-amenazas-e-infraestructura-de-nube-pública)
-   1.8. [Seguridad física](#18-amenazas-a-la-seguridad-física-y-de-las-instalaciones)
-   1.9. [Dominio de aplicación](#19-amenazas-al-dominio-de-applications)
-   1.10. [Ciberamenazas](#110-complejidad-y-evolución-de-las-ciberamenazas)
-   1.11. [Malware avanzado](#111-malware-avanzado-puertas-traseras-backdoors-y-rootkits)
-   1.12. [Inteligancia contra amenazas](#112-inteligencia-contra-amenazas-y-fuentes-de-investigación)
+   - [1.1. Tipos](#11-tipos)
+   - [1.2. Origen de las Amenazas: Internas vs. Externas](#12-origen-de-las-amenazas-internas-vs-externas)
+   - [1.3. El Dominio de Usuario y sus Riesgos](#13-el-dominio-de-usuario-y-sus-riesgos)
+   - [1.4. A los dispositivos](#14-a-los-dispositivos)
+   - [1.5. Entorno de Red Local (LAN) y sus Riesgos](#15-entorno-de-red-local-lan-y-sus-riesgos)
+   - [1.6. Amenazas en Infraestructuras de Nube Privada](#16-amenazas-en-infraestructuras-de-nube-privada)
+   - [1.7. Amenazas e Infraestructura de Nube Pública](#17-amenazas-e-infraestructura-de-nube-pública)
+   - [1.8. Amenazas a la Seguridad Física y de las Instalaciones](#18-amenazas-a-la-seguridad-física-y-de-las-instalaciones)
+   - [1.9. Amenazas al Dominio de Aplicaciones](#19-amenazas-al-dominio-de-aplicaciones)
+   - [1.10. Complejidad y Evolución de las Ciberamenazas](#110-complejidad-y-evolución-de-las-ciberamenazas)
+   - [1.11. Malware Avanzado: Puertas Traseras (Backdoors) y Rootkits](#111-malware-avanzado-puertas-traseras-backdoors-y-rootkits)
+   - [1.12. Inteligencia contra Amenazas y Fuentes de Investigación](#112-inteligencia-contra-amenazas-y-fuentes-de-investigación)
+
 2. [Engaño](#2-engaño)
+   - [2.1. Ingeniería social](#21-ingeniería-social)
+     - [2.1.1. Tácticas de ingeniería social](#211-tácticas-de-ingeniería-social)
+     - [2.1.2. Métodos y Ataques de Engaño Digital](#212-métodos-y-ataques-de-engaño-digital)
+     - [2.1.3. Ataques Físicos de Ingeniería Social](#213-ataques-físicos-de-ingeniería-social)
+     - [2.1.4. Estrategias de Mitigación y Cultura de Seguridad Colectiva](#214-estrategias-de-mitigación-y-cultura-de-seguridad-colectiva)
 
 </details>
+
+
 
 
 ---
