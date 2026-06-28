@@ -13,9 +13,9 @@ o88o     o8888o  888bod8P'  `V88V"V8P' o888o o888o   "888" `Y8bod8P' 8""888P'
 
 Apuntes echos por mi de distintos temas, como por ejemplo hacking, sql, etc ...
 
-## 🌐 Navegación de Apuntes (GitHub Pages)
-*   **Cisco (Networking Academy)**
-    *   [Fundamentos de Ciberseguridad - Introducción](./cisco/networking-academy/fundamentos-ciberseguridad/Introduccion.md)
+## 🌐 Navegación de Apuntes
+*   **Cisco**
+    *   [Networking Academy](./cisco/networking-academy/README.md)
 
 *(A medida que añadas más temas como SQL o hacking, solo debes agregar los enlaces aquí arriba para poder navegar por ellos en la web)*
 
