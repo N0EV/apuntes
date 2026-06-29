@@ -2,7 +2,7 @@
 Introducción al curso de fundamentos de ciberseguridad.
 
 
-<details>
+<details markdown="1">
 <summary>Navegación de los Apuntes (Haz clic para desplegar)</summary>
 
 * [Volver al Índice Anterior](/apuntes/cisco/networking-academy/fundamentos-ciberseguridad/)
@@ -10,7 +10,7 @@ Introducción al curso de fundamentos de ciberseguridad.
 </details>
 
 
-<details>
+<details markdown="1">
 <summary><b>Índice de contenidos (Haz clic para desplegar)</b></summary>
 
 1. [Amenazas](#1-amenazas)
