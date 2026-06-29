@@ -4,6 +4,9 @@ Este directorio principal está dedicado a centralizar mis notas de estudio, res
 
 El objetivo de este espacio es puramente didáctico, sirviendo como guía de aprendizaje y preparación técnica individual.
 
+## INDICE NAVEGACIÓN
+- [Volver al Índice Anterior](../README.md)
+
 ## Descargo de Responsabilidad y Cumplimiento de Políticas (NDA)
 
 Para garantizar el respeto a la propiedad intelectual y el cumplimiento estricto de las políticas de certificación y academia:

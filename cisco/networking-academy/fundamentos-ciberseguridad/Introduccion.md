@@ -2,6 +2,13 @@
 Introducción al curso de fundamentos de ciberseguridad.
 
 <details>
+<summary>🗺️ Navegación de los Apuntes (GitHub Pages)</summary>
+
+* ⬅️ [Volver al Índice Anterior](./README.md)
+
+</details>
+
+<details>
 <summary><b>📋 Índice de contenidos (Haz clic para desplegar)</b></summary>
 
 1. [Amenazas](#1-amenazas)
@@ -39,7 +46,17 @@ Introducción al curso de fundamentos de ciberseguridad.
     - [3.11 Recomendaciones Técnicas de Defensa contra Ataques](#311-recomendaciones-técnicas-de-defensa-contra-ataques)
 
 
-4. [Ciberataques móviles](#4-seguridad-en-redes-inalámbricas-y-vectores-de-ataque-móviles)
+4. [Ciberataques Móviles e Inalámbricos](#4-seguridad-en-redes-inalámbricas-y-vectores-de-ataque-móviles)
+    - [4.1 Introducción y Superficie de Ataque Inalámbrica](#41-introducción-y-superficie-de-ataque-inalámbrica)
+    - [4.2 Amenazas Específicas: Grayware y SMiShing](#42-amenazas-específicas-grayware-y-smishing)
+    - [4.3 Puntos de Acceso No Autorizados (Rogue Access Points)](#43-puntos-de-acceso-no-autorizados-rogue-access-points)
+    - [4.4 Vectores de Ataque Inalámbricos Avanzados](#44-vectores-de-ataque-inalámbricos-avanzados)
+    - [4.5 Bloqueo de Radiofrecuencia (RF Jamming) y Denegación de Servicio Física](#45-bloqueo-de-radiofrecuencia-rf-jamming-y-denegación-de-servicio-física)
+    - [4.6 Ataques a Redes de Área Personal: Bluejacking y Bluesnarfing](#46-ataques-a-redes-de-área-personal-bluejacking-y-bluesnarfing)
+    - [4.7 Evolución y Vulnerabilidades en Protocolos de Seguridad Wi-Fi (WEP vs. WPA2/WPA3)](#47-evolución-y-vulnerabilidades-en-protocolos-de-seguridad-wi-fi-wep-vs-wpa2wpa3)
+    - [4.8 Mecanismos de Defensa y Endurecimiento (Hardening) Inalámbrico y Móvil](#48-mecanismos-de-defensa-y-endurecimiento-hardening-inalámbrico-y-móvil)
+
+5. [Seguridad en la web](#5-seguridad-de-las-webs)
 
 </details>
 
@@ -887,3 +904,312 @@ Para mitigar y neutralizar los vectores de agresión analizados en este módulo,
 
 ## 4. Seguridad en Redes Inalámbricas y Vectores de Ataque Móviles
 
+### 4.1 Introducción y Superficie de Ataque Inalámbrica
+La evolución de las arquitecturas de red hacia entornos empresariales unificados ha difuminado el perímetro de seguridad tradicional. En las redes cableadas convencionales (Ethernet), la mitigación de amenazas se apoya significativamente en el control de acceso físico a los switches, la infraestructura de cableado y los puertos de pared. No obstante, la adopción masiva de tecnologías inalámbricas (WLAN bajo el estándar IEEE 802.11) y la proliferación de la telefonía móvil han expandido exponencialmente la superficie de ataque de las organizaciones.
+
+En un entorno inalámbrico, el medio de transmisión es el espectro de radiofrecuencia (el aire). Esto implica que cualquier actor de amenazas que se encuentre dentro del rango de alcance de la señal puede interceptar tramas de datos, inyectar paquetes maliciosos o ejecutar ataques de denegación de servicio (DoS) sin necesidad de establecer una conexión física previa con la infraestructura. La falta de barreras físicas inherente a las señales de radio convierte a la seguridad de la capa física y de enlace de datos inalámbrica en un vector crítico de vulnerabilidad.
+
+Asimismo, la convergencia de dispositivos móviles (smartphones y tablets) dentro de las redes corporativas mediante políticas como BYOD (Bring Your Own Device) introduce riesgos multifactoriales. Estos dispositivos operan de manera híbrida entre redes celulares, redes Wi-Fi corporativas y puntos de acceso públicos no protegidos. Debido a su portabilidad, constante conectividad y al almacenamiento de credenciales corporativas de alto nivel, los terminales móviles se han convertido en el objetivo predilecto para la exfiltración de información y el acceso inicial no autorizado a redes internas.
+
+---
+
+### 4.2 Amenazas Específicas: Grayware y SMiShing
+
+Los dispositivos móviles descritos anteriormente son el objetivo principal de técnicas de engaño que explotan de forma directa la falta de atención del usuario o la ausencia de auditoría en el software instalado. A continuación, se detallan dos de las amenazas más comunes y de mayor crecimiento en estos entornos:
+
+#### A. Grayware (Software Gris)
+El **Grayware** clasifica a los programas y aplicaciones que, sin ser estrictamente un virus, troyano o ransomware destructivo, ejecutan acciones molestas, invasivas o que comprometen gravemente la privacidad del usuario final.
+
+* **Mecanismo de Acción:** Suelen recopilar datos sensibles como la geolocalización en tiempo real, hábitos de navegación web, listas de contactos, o saturar la interfaz del sistema con publicidad agresiva y no solicitada (Adware).
+* **El Vacío Legal:** Los creadores de grayware mantienen generalmente la legitimidad de sus operaciones al incluir minuciosamente estas capacidades de rastreo dentro de la "letra pequeña" de los contratos de licencia de software (EULA). Al aceptar la instalación, el propio usuario otorga el consentimiento legal para ser monitoreado.
+* **Impacto en Entornos Móviles:** Representa una amenaza creciente y crítica para la seguridad móvil en particular, debido a la tendencia generalizada de los usuarios de smartphones de instalar aplicaciones aprobando permisos masivos de forma impulsiva, ignorando los acuerdos de licencia y las implicaciones de seguridad.
+
+> [!WARNING]
+> **Riesgo Silencioso:** Aunque el Grayware no destruya archivos de manera activa, el consumo sostenido de recursos en segundo plano degrada el rendimiento de la batería y el procesamiento del dispositivo, además de exponer información de la red corporativa a servidores de terceros.
+
+---
+
+#### B. SMiShing (SMS Phishing)
+El **SMiShing** es una variante dirigida de ingeniería social que utiliza el Servicio de Mensajes Cortos (SMS) de las redes celulares en lugar del correo electrónico tradicional para engañar a los objetivos.
+
+```text
+ [ Mensaje de Texto Recibido ]
+ "Su cuenta bancaria ha sido bloqueada. Ingrese urgentemente 
+  al siguiente enlace para verificar su identidad: http://bit.ly"
+```
+
+* **Vectores de Engaño:** Los atacantes estructuran los mensajes de texto falsos suplantando la identidad de entidades de alta confianza (instituciones bancarias, empresas de logística, soporte técnico gubernamental) para forzar una respuesta inmediata mediante un falso sentido de urgencia.
+* **Objetivos del Ataque:**
+  1. **Redirección Maliciosa:** El mensaje incita a la víctima a visitar un sitio web fraudulento optimizado para móviles (phishing) con el fin de capturar credenciales de acceso o datos de tarjetas de crédito.
+  2. **Infección por Malware:** El enlace puede iniciar de forma automática la descarga e instalación de código malicioso (.apk en Android o perfiles maliciosos en iOS) diseñado para espiar el terminal.
+  3. **Fraude Telefónico:** En algunos vectores, el mensaje solicita llamar a un número de teléfono fraudulento de tarifa premium o interactuar con un operador falso para extraer información confidencial por vía de voz (Vishing).
+
+---
+
+| Amenaza | Vector de Entrada Principal | Impacto Operativo y de Seguridad | Método Fundamental de Mitigación |
+| :--- | :--- | :--- | :--- |
+| **Grayware** | Tiendas de aplicaciones (permisos abusivos) | Pérdida de privacidad corporativa y degradación del hardware | Implementar políticas de privilegios mínimos y auditar licencias. |
+| **SMiShing** | Redes de telefonía celular (SMS fraudulentos) | Robo de identidad, phishing de credenciales e infección de endpoints | Capacitación en concientización y bloqueo de remitentes no verificados. |
+
+---
+
+### 4.3 Puntos de Acceso No Autorizados (Rogue Access Points)
+
+El despliegue de infraestructura inalámbrica no controlada dentro del perímetro corporativo representa una de las brechas de seguridad física y lógica más críticas para un administrador de red. Un punto de acceso no autorizado (conocido técnicamente como *Rogue AP*) es cualquier dispositivo emisor de señales inalámbricas que se conecta a la infraestructura de red cableada interna sin la aprobación ni el conocimiento explícito del departamento de TI.
+
+```mermaid
+graph LR
+    subgraph Red Interna Segura
+        A[Servidores y Datos] <--> B[Switch Corporativo]
+    end
+    subgraph Brecha de Seguridad
+        B <--> C[Rogue AP No Autorizado]
+    end
+    subgraph Entorno Exterior
+        C -. Radiofrecuencia .-> D((Atacante Remoto))
+    end
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#f99,stroke:#333,stroke-width:2px
+    style D fill:#edd,stroke:#333,stroke-width:2px
+```
+
+* **Vectores de Introducción en la Red:**
+  * **Configuración por Empleados (Sombra Tecnológica / Shadow IT):** Con frecuencia, trabajadores con buenas intenciones pero sin conocimientos de seguridad conectan routers o APs domésticos económicos a las tomas de red de sus oficinas. Su objetivo suele ser mejorar la cobertura inalámbrica local o conectar sus dispositivos personales, ignorando que están abriendo una brecha masiva en el perímetro.
+  * **Infiltración por Actores de Amenazas:** Un atacante puede aprovechar un descuido de seguridad física en las instalaciones (como una sala de juntas vacía o una toma de red desprotegida en un pasillo) para conectar un dispositivo emisor oculto y así ganar acceso remoto persistente a la red interna desde el exterior del edificio.
+
+* **Impacto Operativo y de Seguridad:**
+  1. **Evasión de Controles de Acceso:** Estos dispositivos puentean por completo las directrices de seguridad de la organización, como la autenticación estricta (802.1X), servidores RADIUS/TACACS+ o portales cautivos.
+  2. **Anulación de la Segmentación de Red:** Al conectarse directamente a un puerto de switch corporativo, el Rogue AP suele quedar integrado en VLANs internas o de producción, otorgando a cualquier usuario inalámbrico que se asocie a él acceso directo a servidores y recursos críticos.
+  3. **Exposición del Tráfico:** Carecen del cifrado empresarial homologado, permitiendo que actores maliciosos intercepten, analicen o alteren el flujo de datos confidenciales de la empresa a través del aire.
+
+> [!CAUTION]
+> **Riesgo Crítico de Arquitectura:** Un Rogue AP transforma un entorno que requiere autenticación estricta en una red abierta y accesible por radiofrecuencia desde el exterior de las instalaciones físicas de la organización.
+
+---
+
+### 4.4 Vectores de Ataque Inalámbricos Avanzados
+
+Las amenazas en redes WLAN combinan de forma sistemática fallas de protocolo con vulnerabilidades humanas y físicas. A continuación, se detallan y extienden en profundidad los tres componentes clave de la explotación inalámbrica mediante puntos de acceso dudosos, estructurados de forma continua:
+
+```mermaid
+graph TD
+    subgraph Fase 1: Intrusión y Desasociación
+        A[Atacante / Ingeniería Social] -- Acceso Físico --> B[Instalación de Punto de Acceso Dudoso]:::critical
+        C[Laptop Atacante]:::critical -- "Tramas de Desautenticación <br>#40;Línea Zigzag / DoS#41;" --> D[Cliente de Escritorio]
+        D -. "Conexión Interrumpida" .-> E[Router / AP Real <br>#40;Señal Débil#41;]:::info
+    end
+
+    subgraph Fase 2: Redirección por Fuerza de Señal
+        F[Usuario Desorientado] -. "Opción A: Conexión Débil" .-> E
+        F -- "Opción B: Conexión Automática <br>#40;Señal Fuerte#41;" --> B
+    end
+
+    subgraph Fase 3: Interceptación Man-in-the-Middle
+        B -- "Captura de Credenciales" --> G[Dispositivo MitM del Delincuente]:::critical
+        G --> H[Análisis de Tráfico / Packet Sniffing]:::critical
+        G <--> I((Internet / Nube)):::success
+    end
+
+    classDef critical stroke:#f44336,stroke-width:2px;
+    classDef info stroke:#2196F3,stroke-width:2px;
+    classDef success stroke:#4CAF50,stroke-width:2px;
+```
+
+* **Punto 1: Intrusión mediante Ingeniería Social y Desasociación**
+  * **Mecánica de Intrusión:** El ataque comienza cuando un actor de amenazas emplea técnicas de ingeniería social avanzadas —como la suplantación de identidad de personal de mantenimiento o el *tailgating*— para evadir los controles de acceso perimetrales del edificio corporativo. El objetivo principal es vulnerar la seguridad física para conectar directamente un punto de acceso no autorizado (*Rogue AP*) a un puerto de switch interno, puenteando los firewalls perimetrales.
+  * **Mecánica de Desasociación:** Una vez posicionado, el atacante utiliza herramientas de radiofrecuencia desde su computadora portátil para escanear el espectro e inyectar tramas de desautenticación legítimas de la capa de administración de la norma IEEE 802.11. Estas tramas falsifican la dirección MAC del AP real o del cliente corporativo.
+  * **Impacto Operativo:** Como estas tramas de gestión viajan sin cifrar en redes heredadas, la inyección constante de paquetes de desvinculación interrumpe el flujo continuo de datos de forma inmediata. Esto genera una desconexión forzada (Denegación de Servicio o DoS) entre el cliente de escritorio y el router corporativo real, forzando al dispositivo de la víctima a buscar una nueva conexión inalámbrica.
+
+* **Punto 2: Configuración del Dispositivo Man-in-the-Middle (MitM)**
+  * **Arquitectura de Interceptación:** El punto de acceso fraudulento, técnicamente catalogado en la jerga de ciberseguridad como el "punto de acceso de un delincuente", no funciona simplemente como un router doméstico aislado; está configurado lógicamente para operar como un nodo intermedio transparente o puente de red (Bridge) entre la víctima y la red legítima, estableciendo un escenario clásico de *Man-in-the-Middle*.
+  * **Explotación del Enlace Inalámbrico:** Para lograr que este dispositivo capture los flujos de datos, el atacante clona los identificadores de capa 2 del AP legítimo. El atacante aprovecha el estado de desconexión del host enviando ráfagas de tramas inalámbricas con la dirección MAC suplantada del router real, controlando el intercambio de autenticación de datos de manera transparente y sin levantar sospechas en los sistemas de monitoreo convencionales.
+  * **Objetivo de Seguridad Comprometido:** Al situarse exactamente en medio de la comunicación, el dispositivo MitM recibe todo el tráfico saliente y entrante de la víctima. Esto faculta al ciberdelincuente para capturar e inspeccionar de forma activa información confidencial en tiempo real, tales como contraseñas, tokens de sesión y credenciales corporativas cifradas o en texto plano.
+
+* **Punto 3: El Fenómeno del Gemelo Maligno (Evil Twin) y Análisis de Tráfico**
+  * **Aprovechamiento de Algoritmos de Red:** El ataque de Gemelo Maligno (*Evil Twin*) se fundamenta en la manipulación deliberada del comportamiento automatizado de los sistemas operativos modernos en laptops y smartphones. Los terminales móviles están programados para asociarse automáticamente al Punto de Acceso que difunda el mismo identificador de red (SSID) pero que ofrezca un mayor nivel de potencia de señal (*RSSI*). El atacante calibra su infraestructura para emitir una señal extremadamente fuerte frente a la señal real de la organización (la cual ha sido degradada o saturada previamente).
+  * **Captura de Paquetes (Packet Sniffing):** En el momento en que el usuario desorientado intenta reconectarse debido a la desconexión provocada en el punto uno, su dispositivo selecciona de forma automática e inadvertida el punto de acceso no autorizado del delincuente. Una vez establecido el enlace inalámbrico falso, el atacante despliega herramientas de inspección profunda como *packet sniffers* (por ejemplo, Wireshark o utilidades automatizadas en Linux).
+  * **Exfiltración de Datos:** Esto les permite analizar detalladamente toda la telemetría, descifrar flujos vulnerables, realizar inyecciones de código malicioso o redirigir solicitudes DNS hacia servidores fraudulentos. Finalmente, para que el usuario no sospeche de la anomalía, el atacante enruta y da salida a este tráfico interceptado hacia la nube de Internet, completando la exfiltración silenciosa de datos corporativos.
+
+> [!CAUTION]
+> **Defensa Crítica:** Para mitigar de raíz estos tres vectores combinados, Cisco recomienda la implementación del estándar **IEEE 802.11w (Protected Management Frames - PMF)** para evitar la suplantación de MAC en las tramas de desautenticación, junto con políticas estrictas de control de acceso a la red basadas en certificados digitales (**802.1X/EAP-TLS**).
+
+---
+
+### 4.5 Bloqueo de Radiofrecuencia (RF Jamming) y Denegación de Servicio Física
+
+Las arquitecturas de comunicación inalámbrica dependen por completo de la integridad del medio físico de transmisión (el aire). Debido a la naturaleza ondulatoria de las señales de radio, el espectro electromagnético es intrínsecamente vulnerable a fenómenos ambientales e interferencias provocadas, lo que abre un vector crítico para ataques de Denegación de Servicio (DoS) en la capa física.
+
+```mermaid
+graph LR
+    subgraph Emisión Legítima
+        A[AP Corporativo]:::info -- "Señal Inalámbrica Legítima <br>#40;Frecuencia X, Modulación Y, Potencia Z#41;" --> B((Espacio Aéreo Compartido)):::critical
+    end
+
+    subgraph Vector de Ataque DoS
+        C[Dispositivo Jammer / Atacante]:::critical -- "Emisión de Ruido Deliberado <br>#40;Frecuencia, Modulación y Potencia Idénticas#41;" --> B
+    end
+
+    subgraph Impacto en el Receptor
+        B -. "Señal Degradada / Ruido Destructivo" .-> D[Estación Receptora / Cliente móvil]
+        D --> E[Pérdida Total de Conectividad]:::critical
+    end
+
+    classDef critical stroke:#f44336,stroke-width:2px;
+    classDef info stroke:#2196F3,stroke-width:2px;
+```
+
+* **Vulnerabilidades Inherentes del Medio Inalámbrico:** Las señales inalámbricas que transportan datos son altamente susceptibles a la degradación pasiva causada por la Interferencia Electromagnética (EMI) y la Interferencia de Radiofrecuencia (RFI). En entornos de producción cotidianos, estas frecuencias pueden verse afectadas por factores externos no maliciosos, tales como perturbaciones por descargas atmosféricas (rayos), ruido eléctrico generado por balastros de luces fluorescentes o el funcionamiento de hornos de microondas operando en la banda libre de 2.4 GHz.
+* **Mecanismo de Interferencia Deliberada (Jamming):** Los actores de amenazas explotan activamente esta susceptibilidad física mediante el bloqueo intencionado del espectro. El ataque consiste en inundar el espacio aéreo con ruido electromagnético de alta intensidad para obstruir la transmisión de una estación de radio, un enlace satelital o un punto de acceso corporativo. El objetivo final es saturar el medio físico compartido para evitar por completo que la señal inalámbrica legítima sea legible cuando llegue a la estación receptora.
+* **Criterios Técnicos para la Efectividad del Bloqueo:** Para ejecutar este ataque con éxito y anular el enlace de comunicación, un bloqueador de RF (*Jammer*) no puede emitir de forma aleatoria. El hardware del atacante debe calibrarse con precisión matemática para igualar tres variables críticas del dispositivo que busca interrumpir:
+  1. **La Frecuencia:** Debe operar exactamente en el mismo canal o subbanda de espectro (por ejemplo, canales específicos de 2.4 GHz o 5 GHz).
+  2. **La Modulación:** Debe alinearse al método de codificación de la onda portadora para corromper los símbolos de datos de manera destructiva.
+  3. **La Potencia:** La amplitud de la señal del bloqueador debe ser igual o superior a la del emisor legítimo en el punto de recepción, disminuyendo drásticamente la relación señal/ruido (*SNR*). Como consecuencia, el dispositivo receptor se vuelve incapaz de decodificar los bits, resultando en el aislamiento inmediato de todos los hosts dentro del radio de alcance.
+
+> [!TIP]
+> **Estrategia de Mitigación Cisco:** Para combatir el bloqueo de RF deliberado, Cisco implementa tecnologías como **Cisco CleanAir** en sus Puntos de Acceso empresariales. Este sistema cuenta con un silicio especializado (ASIC) que detecta y clasifica la firma del *Jammer* en tiempo real, permitiendo al Wireless LAN Controller (WLC) cambiar de forma dinámica a canales de radio no afectados mediante algoritmos de Gestión de Recursos de Radio (RRM).
+
+---
+
+### 4.6 Ataques a Redes de Área Personal: Bluejacking y Bluesnarfing
+
+A diferencia de las vulnerabilidades Wi-Fi que apuntan principalmente a la infraestructura central o a los puntos de acceso, las amenazas basadas en el protocolo Bluetooth (bajo el estándar IEEE 802.15.1) se enfocan directamente en los terminales de los usuarios (*endpoints*). Debido al diseño de propagación de las ondas y al alcance físico intrínsecamente limitado de las antenas de Clase 2 y Clase 3 de Bluetooth, un atacante requiere proximidad geográfica obligatoria (generalmente un radio de entre 1 y 10 metros del objetivo) para explotar el dispositivo de la víctima de manera silenciosa y sin su consentimiento implícito.
+
+```mermaid
+graph TD
+    subgraph Atacante ["Proximidad Física Atacante"]
+        A[Dispositivo del Atacante]:::critical
+    end
+
+    subgraph WPAN ["Perímetro WPAN <br> 1 a 10 Metros"]
+        A -- "Envío de Mensajes / vCards <br>#40;Capa de Control#41;" --> B[Bluejacking]
+        A -- "Exfiltración No Autorizada <br>#40;Acceso a Archivos#41;" --> C[Bluesnarfing]
+    end
+
+    subgraph Objetivo ["Impacto en el Dispositivo Objetivo"]
+        B --> D[Impacto: Mensajes SPAM, imágenes invasivas, ingeniería social]
+        C --> E[Impacto: Robo de correos, lista de contactos, fotos y SMS]:::critical
+    end
+
+    classDef critical stroke:#f44336,stroke-width:2px;
+```
+
+* **1. Bluejacking (Spam Inalámbrico No Solicitado)**
+  * **Mecánica del Ataque:** El *Bluejacking* consiste en la utilización de las funciones de descubrimiento de la tecnología inalámbrica Bluetooth para transmitir mensajes de texto no autorizados, notas de agenda o imágenes invasivas a otro dispositivo receptor. El atacante aprovecha que el terminal de la víctima tiene el Bluetooth activado en modo "visible" o "descubrible" y envía un archivo —comúnmente camuflado como una tarjeta de contacto electrónica (*vCard*)— que contiene el mensaje malicioso en el campo del nombre del remitente.
+  * **Impacto Operativo:** Aunque este vector no compromete de manera directa la integridad del sistema operativo ni modifica archivos internos, constituye una brecha de privacidad severa. Se emplea de forma activa en espacios públicos concurridos (transporte masivo, centros comerciales) como una herramienta de hostigamiento o como paso inicial para campañas de ingeniería social, asustando al usuario para que deshabilite defensas o acepte emparejamientos más peligrosos.
+
+* **2. Bluesnarfing (Exfiltración y Robo de Datos Avanzado)**
+  * **Mecánica del Ataque:** El *Bluesnarfing* representa un nivel de amenaza críticamente superior y destructivo para la seguridad corporativa. Ocurre cuando un atacante explota fallas o malas implementaciones específicas en el protocolo de intercambio de objetos (OBEX) o en el canal de control de emparejamiento Bluetooth de la víctima. Mediante herramientas de software especializadas, el intruso establece una conexión forzada y bidireccional con el terminal objetivo sin necesidad de que el usuario apruebe una clave de vinculación (*PIN*).
+  * **Impacto Operativo:** Una vez establecida la conexión no consentida, el atacante adquiere privilegios de lectura avanzados sobre el sistema de archivos del terminal. Esto le permite copiar, duplicar y exfiltrar de manera completamente invisible información corporativa de alto valor, incluyendo el árbol completo de correos electrónicos sincronizados, las listas detalladas de contactos telefónicos, el historial de mensajes de texto (SMS) y las galerías de imágenes privadas, comprometiendo de raíz la confidencialidad de los datos almacenados en el *endpoint*.
+
+> [!TIP]
+> **Estrategia Corporativa de Mitigación:** Para anular la superficie de ataque de estos vectores de proximidad, Cisco aconseja aplicar políticas estrictas a través de sistemas de Gestión de Dispositivos Móviles (MDM). Estas directrices deben forzar a los terminales corporativos a operar permanentemente en modo "No Descubrible" (Invisible) e inhabilitar de forma automática el protocolo Bluetooth cuando el dispositivo detecte que se encuentra fuera de los perímetros físicos seguros de la organización.
+
+---
+
+### 4.7 Evolución y Vulnerabilidades en Protocolos de Seguridad Wi-Fi (WEP vs. WPA2/WPA3)
+
+La protección de los datos en tránsito dentro de una red de área local inalámbrica (WLAN) depende de la robustez de los protocolos de cifrado aplicados en la capa de enlace de datos. Históricamente, mecanismos como *Wired Equivalent Privacy* (WEP) y *Wi-Fi Protected Access* (WPA/WPA2/WPA3) fueron diseñados para mitigar la vulnerabilidad intrínseca del medio compartido (el aire); sin embargo, las deficiencias arquitectónicas de las primeras implementaciones facilitaron el desarrollo de vectores de ataque avanzados.
+
+```mermaid
+graph TD
+    subgraph WEP ["Protocolo WEP <br>#40;Deprecado e Inseguro#41;"]
+        A[Clave Estática Compartida] --- B[Falta de Gestión de Claves]
+        C[Vector de Inicialización IV Corto] --- D[IV Transmitido en Texto Plano]
+        B & D --> E[Recuperación de Clave Criptográfica por el Atacante]:::critical
+    end
+
+    subgraph WPA2_WPA3 ["Protocolos WPA2 / WPA3 <br>#40;Seguridad Avanzada#41;"]
+        F[Claves Dinámicas] --- G[Cifrado AES o SAE]
+        G --> H[Clave Criptográfica No Recuperable por Observación]
+        I[Atacante con Packet Sniffer] -. Interceptación de Flujos .-> J[Análisis de Paquetes Handshake y Tráfico]:::critical
+    end
+
+    classDef critical stroke:#f44336,stroke-width:2px;
+```
+
+#### 4.7.1 Definición y Funcionamiento Interno de los Protocolos
+
+Para comprender cómo los atacantes vulneran las redes inalámbricas, es fundamental analizar la arquitectura técnica y el funcionamiento operativo de cada protocolo desarrollado por la IEEE y la Wi-Fi Alliance:
+
+##### A. WEP (Wired Equivalent Privacy)
+* **Qué es:** Fue el primer protocolo de seguridad inalámbrica estandarizado (1997), diseñado originalmente para proporcionar a las redes Wi-Fi el mismo nivel de confidencialidad y privacidad que una red cableada tradicional basada en cobre (Ethernet).
+* **Cómo funciona:** WEP utiliza el algoritmo de cifrado de flujo **RC4** por su velocidad de procesamiento en hardware antiguo. Para encriptar un paquete, el protocolo toma una clave estática precompartida (de 40 o 104 bits) y la combina (concatena) con un valor dinámico llamado **Vector de Inicialización (IV)** de solo 24 bits. Juntos forman una clave de 64 o 128 bits que alimenta al algoritmo RC4 para generar un *keystream* (flujo de claves) que se aplica mediante una operación matemática XOR al texto plano de los datos. Para la integridad, calcula un valor de verificación de redundancia cíclica (CRC-32).
+
+##### B. WPA (Wi-Fi Protected Access)
+* **Qué es:** Una solución de emergencia de software temporal introducida en 2003 por la Wi-Fi Alliance para mitigar el colapso criptográfico de WEP sin obligar a las empresas a cambiar el hardware de sus puntos de acceso.
+* **Cómo funciona:** Mantiene el algoritmo de cifrado **RC4**, pero introduce el protocolo de integridad de clave temporal **TKIP (Temporal Key Integrity Protocol)**. En lugar de usar claves estáticas, TKIP implementa una función de mezcla de claves por paquete, lo que significa que la clave de cifrado cambia de manera dinámica para cada trama de datos. Además, WPA expandió el Vector de Inicialización (IV) a 48 bits para evitar la reutilización y añadió un código de integridad del mensaje (MIC) llamado *Michael* para evitar alteraciones del tráfico.
+
+##### C. WPA2 (Wi-Fi Protected Access 2)
+* **Qué es:** El estándar de seguridad definitivo de segunda generación (2004) que reemplazó por completo a WEP y WPA, convirtiéndose en el requisito obligatorio para la certificación de cualquier hardware Wi-Fi moderno.
+* **Cómo funciona:** WPA2 descarta por completo el algoritmo RC4 y TKIP debido a sus debilidades inherentes. En su lugar, adopta de forma obligatoria el estándar de cifrado avanzado **AES (Advanced Encryption Standard)**, un cifrado por bloques altamente seguro que requiere coprocesadores de hardware dedicados. WPA2 envuelve a AES en la arquitectura **CCMP** (Counter Mode with Cipher Block Chaining Message Authentication Code Protocol). Para el funcionamiento, emplea una clave dinámica única por dispositivo y utiliza un proceso de saludo de 4 vías (*4-Way Handshake*) para verificar que tanto el cliente como el AP conocen la contraseña de la red sin transmitirla nunca por el aire.
+
+##### D. WPA3 (Wi-Fi Protected Access 3)
+* **Qué es:** La tercera y más reciente generación de seguridad inalámbrica (2018), desarrollada para subsanar los vectores residuales de interceptación pasiva y ataques por diccionario presentes en WPA2.
+* **Cómo funciona:** En su modo personal (WPA3-Personal), elimina el concepto de clave precompartida tradicional (PSK) y lo reemplaza con el protocolo **SAE (Simultaneous Authentication of Equals)**, basado en el intercambio de claves Diffie-Hellman en curvas elípticas. A nivel operativo, SAE obliga a realizar una autenticación interactiva bidireccional donde cada intento de inicio de sesión requiere un cómputo único. Esto inmuniza a la red contra ataques de diccionario fuera de línea (*offline*) y proporciona **Secreto Perfecto hacia Adelante (Forward Secrecy)**, impidiendo que un atacante descifre tráfico capturado en el pasado incluso si consigue adivinar la contraseña de la red en el futuro.
+
+---
+
+#### 4.7.2 Análisis Teórico de Fallos y Vulnerabilidades
+
+* **Criptoanálisis y Colapso Arquitectónico de WEP:**
+  * **Deficiencia en la Gestión de Claves:** El problema crítico de WEP radicó en la ausencia absoluta de un mecanismo automatizado para la administración de claves. Las organizaciones configuraban manualmente la misma clave estática en todos los dispositivos. Al crecer el número de usuarios, la clave se volvía de conocimiento público, comprometiendo la red de inmediato.
+  * **El Fallo del Vector de Inicialización (IV):** Al tener un tamaño de solo 24 bits, WEP genera apenas 16.7 millones de combinaciones posibles. En una red con tráfico moderado, estos IVs se agotan rápidamente y comienzan a reutilizarse. Debido a que el IV se transmite en texto plano (sin cifrar) adosado a la trama, un atacante pasivo recopila estos paquetes duplicados en minutos y aplica algoritmos matemáticos para deducir directamente la clave maestra RC4.
+
+* **Robustez y Limitaciones de Vigilancia en WPA y WPA2:**
+  * **Protección de la Clave Maestra:** Gracias al uso de AES y la rotación dinámica de claves de CCMP, un atacante es matemáticamente incapaz de deducir o recuperar la clave de cifrado original simplemente observando de forma pasiva el tráfico normal de datos que fluye por el aire.
+  * **El Vector de Interceptación Residual (Packet Sniffing):** A pesar de la robustez de WPA2, este protocolo es vulnerable si un atacante utiliza un software analizador de protocolos (*packet sniffer*) dentro del rango de la señal. Al capturar el *4-Way Handshake* (los paquetes que se intercambian justo cuando un usuario legítimo se conecta al AP), el atacante obtiene hashes de la contraseña. Aunque los datos del usuario permanezcan cifrados, el atacante puede exportar esa captura de paquetes a su propio hardware y ejecutar ataques de fuerza bruta masivos basados en diccionarios para descifrar la clave original de la organización de forma externa.
+
+> [!IMPORTANT]
+> **Diferencia Operativa Clave:** Mientras que en WEP un atacante recupera la clave descifrando directamente las tramas de datos por fallas de diseño matemático (IV corto), en WPA2 el atacante solo puede atacar el proceso de autenticación inicial (*Handshake*) de forma indirecta mediante fuerza bruta. WPA3 neutraliza este último vector al requerir que el atacante esté presente activamente en vivo para validar cada contraseña, imposibilitando los ataques de diccionario masivos en computadoras externas.
+
+---
+
+### 4.8 Mecanismos de Defensa y Endurecimiento (Hardening) Inalámbrico y Móvil
+
+La mitigación efectiva de los vectores de ataque descritos a lo largo de este módulo requiere la implementación de un enfoque de seguridad en profundidad. La protección de la infraestructura inalámbrica y de los terminales móviles corporativos no puede depender de un único control, sino de la combinación de configuraciones criptográficas estrictas, segmentación de red a nivel de arquitectura y políticas operativas rígidas.
+
+```mermaid
+graph TD
+    subgraph Politicas corporativas ["Políticas Corporativas de Endurecimiento"]
+        A[Hardening de Parámetros por Defecto] --- B[Políticas de Acceso para Invitados / Guests]
+    end
+
+    subgraph Arquitectura de red ["Arquitectura de Red Segura"]
+        C[AP Inalámbrico Corporativo] --> D{Firewall / DMZ Perimetral}
+        D --> E[Red LAN Interna Protegida]:::success
+        D --> F[Zona de Dispositivos No Confiables]:::critical
+    end
+
+    subgraph Conectividad y auditoria ["Conectividad Segura y Auditoría Activa"]
+        G[Empleados Remotos / WLAN] -- "Túnel VPN de Acceso Seguro" --> E
+        H[Herramientas de Auditoría / NetStumbler] -. "Detección Activa" .-> I[Puntos de Acceso Dudosos]:::critical
+    end
+
+    classDef critical stroke:#f44336,stroke-width:2px;
+    classDef success stroke:#4CAF50,stroke-width:2px;
+```
+
+#### 4.8.1 Directrices Técnicas para la Mitigación de Amenazas
+
+Para neutralizar los riesgos asociados con los puntos de acceso no autorizados, el espionaje de tráfico y la infiltración móvil, las organizaciones deben desplegar de manera obligatoria las siguientes contramedidas de seguridad:
+
+* **1. Aplicación de Hardening y Modificación de Parámetros por Defecto:**
+  Es mandatorio deshabilitar de forma inmediata los ajustes de fábrica en todos los equipos de red inalámbricos. Esto incluye la modificación obligatoria de las credenciales de administración predeterminadas, la desactivación de protocolos vulnerables de autoconfiguración como WPS (*Wi-Fi Protected Setup*), el ocultamiento estratégico del SSID (en los casos aplicables) y la activación forzada de los estándares de autenticación y cifrado más robustos de la industria (como WPA3 u 802.1X/EAP-TLS).
+
+* **2. Segmentación Arquitectónica mediante DMZ (Zona Desmilitarizada):**
+  Para restringir y mitigar el radio de impacto de un compromiso inalámbrico, la ubicación lógica de los puntos de acceso debe ser controlada de manera perimetral. Los APs destinados a redes públicas o dispositivos de terceros nunca deben tener acceso directo a la LAN interna. Su tráfico debe ser direccionado fuera del firewall principal o segregado dentro de una **Zona Desmilitarizada (DMZ)**. Esta red perimetral actúa como un colchón de seguridad que aísla de manera estricta los sistemas críticos y bases de datos de la organización contra las conexiones procedentes de dispositivos no confiables o huéspedes.
+
+* **3. Monitoreo y Auditoría Activa del Espectro de Radiofrecuencia:**
+  Los administradores de red deben ejecutar auditorías de espectro de forma periódica empleando herramientas analíticas especializadas de WLAN (tales como *NetStumbler*, *Kismet* o analizadores de espectro nativos de soluciones empresariales Cisco). El despliegue de este software permite mapear el entorno electromagnético para descubrir de forma temprana la presencia de puntos de acceso dudosos (*Rogue APs*), estaciones de trabajo no autorizadas operando en modo promiscuo o señales maliciosas que violen el perímetro corporativo.
+
+* **4. Formalización de Políticas de Control de Acceso para Invitados:**
+  Se debe desarrollar e implementar una política corporativa estricta y restrictiva para el aprovisionamiento de acceso de usuarios temporales a la infraestructura Wi-Fi. Las redes de invitados deben operar de manera complementaria bajo portales cautivos, requerir el aislamiento de clientes (*Client Isolation*) para impedir que los usuarios temporales puedan verse o atacarse entre sí, y aplicar cuotas automáticas de expiración de credenciales y limitación de ancho de banda.
+
+* **5. Cifrado Extremo a Extremo mediante VPNs de Acceso Remoto:**
+  Debido a que el tráfico viaja inevitablemente por el aire y es susceptible a ser capturado por *packet sniffers*, los empleados de la organización que necesiten interactuar con recursos internos a través de la WLAN (ya sea la red corporativa o puntos de acceso públicos remotos) deben canalizar todas sus comunicaciones a través de una **VPN (Virtual Private Network) de acceso remoto**. El uso de túneles cifrados basados en protocolos seguros como IPsec o TLS encapsula toda la telemetría, asegurando que incluso si un atacante ejecuta con éxito un ataque MitM mediante un *Evil Twin*, la información capturada permanezca completamente ilegible y protegida de extremo a extremo.
+
+---
+
+## 5. Seguridad de las webs
