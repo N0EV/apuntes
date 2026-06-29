@@ -1,15 +1,17 @@
 # Introducción
 Introducción al curso de fundamentos de ciberseguridad.
 
-<details>
-<summary>🗺️ Navegación de los Apuntes (GitHub Pages)</summary>
 
-* ⬅️ [Volver al Índice Anterior](./README.md)
+<details>
+<summary>Navegación de los Apuntes (Haz clic para desplegar)</summary>
+
+* [Volver al Índice Anterior](/apuntes/cisco/networking-academy/fundamentos-ciberseguridad/)
 
 </details>
 
+
 <details>
-<summary><b>📋 Índice de contenidos (Haz clic para desplegar)</b></summary>
+<summary><b>Índice de contenidos (Haz clic para desplegar)</b></summary>
 
 1. [Amenazas](#1-amenazas)
    - [1.1. Tipos](#11-tipos)
@@ -60,12 +62,7 @@ Introducción al curso de fundamentos de ciberseguridad.
 
 </details>
 
-
-
-
 ---
-
-
 
 ## 1. Amenazas
 
