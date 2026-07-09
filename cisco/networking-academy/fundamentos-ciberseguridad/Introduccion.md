@@ -63,6 +63,9 @@ Introducción al curso de fundamentos de ciberseguridad.
 </details>
 
 ---
+>[!WARNING]
+>Este curso queda paralizado hasta que se acabe dicho curso y luego se procedera al lipiado y filtrado de datos para evitar cometer alguna infracción de copyright.
+>Hasta nuevo aviso no habra mas actualizaciónes de este apartado de este repositorio.
 
 ## 1. Amenazas
 
